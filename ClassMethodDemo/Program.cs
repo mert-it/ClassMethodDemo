@@ -24,20 +24,21 @@ namespace ClassMethodDemo
             client3.TrialDate = "03.03.2021";
             client3.ClientId = 77777;
 
-            Client[] clients = new Client[] {client1, client2, client3 };
-
-            foreach (var client in clients)
-            {
-                //Console.WriteLine(client.ClientNameSurname);
-            }
-
             ClientManager clientManager = new ClientManager();
+
             clientManager.AddClient(client1);
             clientManager.RemoveClient(client2);
             clientManager.TrialDate(client3);
 
-            
-            
+            Client[] clients = new Client[] { client1, client2, client3 };
+
+            Console.WriteLine("MÜVEKKİL LİSTESİ");
+            Console.WriteLine("");
+            foreach (var client in clients)
+            {                
+                clientManager.ListClients(client);
+            }
+            Console.WriteLine("----------END-----------");
         }
     }
 }
